@@ -5,7 +5,7 @@
   "main": "test.js",
   "scripts": {
     "build": "tsc",
-    "dev": "tsc & node dist",
+    "dev": "concurrently --kill-others \"tsc --watch\" \"supervisor dist\" ",
     "test": "tsc && mocha dist/**/*.spec.js",
     "lint": "eslint src --ext ts",
     "tsc": "tsc"
